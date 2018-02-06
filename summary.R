@@ -1,0 +1,3 @@
+df_summary <- data.frame(c("mean","median","sd","min","max","skew","kurtosis", "IQR"), c(mean(age_vec), median(age_vec), sd(age_vec), min(age_vec), max(age_vec), skewness(age_vec), kurtosis(age_vec), IQR(age_vec)), c(mean(wagesal_vec), median(wagesal_vec), sd(wagesal_vec), min(wagesal_vec), max(wagesal_vec), skewness(wagesal_vec), kurtosis(wagesal_vec), IQR(wagesal_vec)))
+
+names(df_summary) <- c("Statistic", "Age", "Wage")
