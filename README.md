@@ -7,17 +7,28 @@ Replication of Shin & Solon (2011, JPubE)
 
 This repository includes the R code that replicates Figure 2-5 of Shin & Solon (2011, JPubE). [^fn1]
 
-[toc]
+- [Description of the Study](#desc)
+- [Data](#data)
+	- [PSID Variables](#vars)
+	- [Preparing the Datasets](#prepare)
+	- [Cleaning the Data](#clean)
+- [Summary Statistics](#summary)
+- [Calculations](#calc)
+	- [Figure 2](#fig2)
+	- [Figure 3](#fig3) 	
+	- [Figure 4](#fig4)
+	- [Figure 5](#fig5)
 
-# Description of the Study
+
+# Description of the Study <a name="desc"></a>
 
 The paper studies the change in the earnings volatility of men in the U.S. between 1969 and 2006. To this end, they employ the PSID data for the relevant years.  We document the summary statistics of age and wage income distributions, and plot our version of Figure 2 to Figure 5 of the paper.
 
 In Figure 2, we plot these differences. Figure 3 shows the historical movement of the log difference in earnings by plotting 10th, 25th, 50th, 75th and 90th percentile over the entire period. In Figure 4, we compare two methods of calculating volatility of the earnings. Finally, in Figure 5, we plot the 90th percentile-10th percentile difference of the earnings with the latter method in which we use the levels of income rather than the logs.
 
-# Data
+# Data <a name="data"></a>
 
-## PSID Variables 
+## PSID Variables   <a name="vars"></a>
 
 We provide the list of variables that we use for each year [here.](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/psid_variables.txt) [^fn30] The variable names here relates to the variable names as follows:
 
@@ -34,11 +45,11 @@ We provide the list of variables that we use for each year [here.](https://githu
 - Accuracy of Business Income: `acc_bus`,
 - Tot. Income Exl Farm and Business HH: `excfarmbus`
 
-## Preparing the Datasets
+## Preparing the Datasets  <a name="prepare"></a>
 
 We analyze the two-year differences in earnings throughtout the period. So, we prepare a distict dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
 
-## Cleaning the DataWe restrict [^fn2] the sample to include only the heads of the households who have the following features:
+## Cleaning the Data  <a name="clean"></a>We restrict [^fn2] the sample to include only the heads of the households who have the following features:
 
 - gender: male
 - age: in [25,59] in both years
@@ -56,7 +67,7 @@ Then, for all calculations, we drop [^fn4] the top and bottom 1% of the observat
 - wage $\geq$ 1st percentile of wages [^fn5]
 - wage $\leq$ 99th percentile of wages
  
-# Summary Statistics 
+# Summary Statistics   <a name="summary"></a>
 
 The summary of ages and wage & salaries in the dataset is as follows: [^fn20]
 
@@ -113,9 +124,9 @@ The summary of ages and wage & salaries in the dataset is as follows: [^fn20]
 </tbody>
 </table>
 </center>
-# Calculations
+# Calculations  <a name="calcs"></a>
 
-## Figure 2
+## Figure 2  <a name="fig2"></a>
 For Figure 2 [^fn32], we calculate the numbers for five series:
 
 - Wages & Salaries: Take the log of the wage and salary income (`wage`) for both years, take the difference, regress on a quadratic in age, save the residuals, save the standard deviation of the residuals.
@@ -126,7 +137,7 @@ For Figure 2 [^fn32], we calculate the numbers for five series:
 
 Figure 2 [^fn42] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
 
-## Figure 3
+## Figure 3  <a name="fig3"></a>
 
 For Figure 3 [^fn33], we take the log of the wage and salary income (`wage`) for both years, take the difference, regress on a quadratic in age, save the residuals. And then, find the following values:
 
@@ -139,7 +150,7 @@ For Figure 3 [^fn33], we take the log of the wage and salary income (`wage`) for
 
 Figure 3 [^fn43] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
 
-## Figure 4
+## Figure 4  <a name="fig4"></a>
 
 For Figure 4 [^fn34], we calculate the following three series:
 
@@ -153,7 +164,7 @@ For Figure 4 [^fn34], we calculate the following three series:
 Figure 4 [^fn44] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig4.png)
 
 
-## Figure 5
+## Figure 5  <a name="fig5"></a>
 
 For Figure 5 [^fn35], we do the same calculations as we did for *Relative change in real earnings (zeros and outliers excluded)* series in Figure 4. Then, we calculate the following five properties of that series: 
 
