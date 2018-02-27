@@ -5,7 +5,7 @@ Replication of Shin & Solon (2011, JPubE)
 </h1>
 
 
-This repository includes the R code that replicates Figure 2-5 of Shin & Solon (2011, JPubE). [1]
+This repository includes the R code that replicates Figure 2-5 of Shin & Solon (2011, JPubE). [^fn1]
 
 - [Description of the Study](#desc)
 - [Data](#data)
