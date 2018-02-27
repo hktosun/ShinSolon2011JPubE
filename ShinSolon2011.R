@@ -3,6 +3,9 @@ rm(list = ls(all=TRUE))
 library("tidyverse")
 library("e1071")
 library("reshape2")
+library(xtable)
+library(stargazer)
+
 
 setwd("func")
 files.sources = list.files()
@@ -46,6 +49,9 @@ if("data" %in% list.files()){
   }
 
   rm(cpi0, cpi1, files, files.sources, y)
+ 
+
+  summaryStatistics(age_vec, wage_vec)
   
   write.table(cbind(years, t(mat2)), file="output/fig2data.txt", sep = ",", row.names=FALSE, col.names=c("year", "Wages & salaries", "Wages & salaries with ages 30-54", "Total Labor Income (Dynan et al.)", "Wages & salaries without controlling for age", "Total Labor Income excluding farm & business income"))
   write.table(cbind(years, t(mat3)), file="output/fig3data.txt", sep = ",", row.names=FALSE, col.names=c("year", "p90","p75","median","p25","p10"))
