@@ -5,7 +5,7 @@ Replication of Shin & Solon (2011, JPubE)
 </h1>
 
 
-This repository includes the R code that replicates Figure 2-5 of [*"Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?"*](https://www.sciencedirect.com/science/article/pii/S0047272711000338) by Shin & Solon (2011, JPubE).
+This repository includes the R code that replicates Figure 2-5 of [*"Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?"*](https://www.sciencedirect.com/science/article/pii/S0047272711000338) by Shin & Solon (2011, Journal of Public Economics).
 
 - [Description of the Study](#desc)
 - [Data](#data)
