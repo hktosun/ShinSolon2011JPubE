@@ -1,0 +1,14 @@
+drawFigure3 <- function(mat){
+  d <- as.data.frame(cbind(years, t(mat)))
+  d <- melt(d, id.vars = 'years', variable.name = 'series')
+  p <- ggplot(d, aes(years, value)) +
+    geom_point(aes(colour = series, shape = series)) +
+    geom_line(aes(colour = series)) +
+    scale_shape_manual(name = "", labels = c("p90","p75","median","p25","p10"), values = c(18, 15, 17, 4, 16))+
+    scale_y_continuous(breaks = seq(-0.8, 0.6, 0.1)) +
+    scale_color_discrete(name = "", labels = c("p90","p75","median","p25","p10")) +
+    guides(col = guide_legend(ncol = 5)) +
+		ggtitle("Fig 3: Quantiles of age-adjusted change in log earnings")
+	p <- figureMakeUp(p)
+	return(p)		
+}
