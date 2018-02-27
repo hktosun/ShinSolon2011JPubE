@@ -1,7 +1,6 @@
-drawFigure5 <- function(mat){
-  d <- as.data.frame(cbind(years, t(mat)))
-  d <- melt(d, id.vars = 'years', variable.name = 'series')
-  p <- ggplot(d, aes(years, value)) +
+drawFigure5 <- function(d){
+  d <- melt(d, id.vars = 'year', variable.name = 'series')
+  p <- ggplot(d, aes(year, value)) +
     geom_point(aes(colour = series, shape = series)) +
     geom_line(aes(colour = series)) +
     scale_shape_manual(name = "", labels = c("p90","p75","median","p25","p10"), values = c(18, 15, 17, 4, 16))+

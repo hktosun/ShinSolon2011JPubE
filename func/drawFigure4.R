@@ -1,7 +1,6 @@
-drawFigure4 <- function(mat){
-  d <- as.data.frame(cbind(years, t(mat)))
-  d <- melt(d, id.vars = 'years', variable.name = 'series')
-  p <- ggplot(d, aes(years, value)) +
+drawFigure4 <- function(d){
+  d <- melt(d, id.vars = 'year', variable.name = 'series')
+  p <- ggplot(d, aes(year, value)) +
     geom_point(aes(colour = series, shape = series)) +
     geom_line(aes(colour = series)) +
     scale_y_continuous(breaks = seq(0.45, 1.15, 0.1)) +
