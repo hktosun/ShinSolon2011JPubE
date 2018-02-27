@@ -5,7 +5,7 @@ Replication of Shin & Solon (2011, JPubE)
 </h1>
 
 
-This repository includes the R code that replicates Figure 2-5 of Shin & Solon (2011, JPubE). [^fn1]
+This repository includes the R code that replicates Figure 2-5 of Shin & Solon (2011, JPubE). [1]
 
 - [Description of the Study](#desc)
 - [Data](#data)
@@ -49,7 +49,13 @@ We provide the list of variables that we use for each year [here.](https://githu
 
 We analyze the two-year differences in earnings throughtout the period. So, we prepare a distict dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
 
+<<<<<<< HEAD
 ## Cleaning the Data  <a name="clean"></a>We restrict [^fn2] the sample to include only the heads of the households who have the following features:
+=======
+## Cleaning the Data
+
+We restrict [^fn2] the sample to include only the heads of the households who have the following features:
+>>>>>>> 611be717ecf3f4e9bd063ceb166f2e581982bcc6
 
 - gender: male
 - age: in [25,59] in both years
@@ -135,7 +141,9 @@ For Figure 2 [^fn32], we calculate the numbers for five series:
 - Wages & Salaries without controlling for age: Take the log of the wage and salary income (`wage`) for both years, take the difference, save the standard deviation of the difference.
 - Total Labor Income excluding farm & business income: Take the log of the Total Labor Income excluding farm & business income (`excfarmbus`) for both years, take the difference, regress on a quadratic in age, save the residuals, save the standard deviation of the residuals.
 
-Figure 2 [^fn42] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
+Figure 2 [^fn42] is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
 
 ## Figure 3  <a name="fig3"></a>
 
@@ -148,7 +156,9 @@ For Figure 3 [^fn33], we take the log of the wage and salary income (`wage`) for
 - p10: 10th percentile of the residuals 
 
 
-Figure 3 [^fn43] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
+Figure 3 [^fn43] is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
 
 ## Figure 4  <a name="fig4"></a>
 
@@ -161,7 +171,9 @@ For Figure 4 [^fn34], we calculate the following three series:
 
 - Relative change in real earnings (zeros and outliers included): The same calculation described above with the dataset that includes zero earnings.
 
-Figure 4 [^fn44] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig4.png)
+Figure 4 [^fn44] is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig4.png)
 
 
 ## Figure 5  <a name="fig5"></a>
@@ -175,10 +187,14 @@ For Figure 5 [^fn35], we do the same calculations as we did for *Relative change
 - p10: 10th percentile
 
 
-Figure 5 [^fn45] is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig5.png)
+Figure 5 [^fn45] is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig5.png)
 
 
-[^fn1]: [Shin, D., & Solon, G. (2011). Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?. Journal of public Economics, 95(7-8), 973-982](https://www.sciencedirect.com/science/article/pii/S0047272711000338)
+
+
+[1]: [Shin, D., & Solon, G. (2011). Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?. Journal of public Economics, 95(7-8), 973-982](https://www.sciencedirect.com/science/article/pii/S0047272711000338)
 
 [^fn2]: Check [cleanData.R](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/cleanData.R)
 
