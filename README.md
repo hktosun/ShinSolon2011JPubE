@@ -13,11 +13,11 @@ This repository includes the R code that replicates Figure 2-5 of [*"Trends in m
 	- [Preparing the Datasets](#prepare)
 	- [Cleaning the Data](#clean)
 - [Summary Statistics](#summary)
-- [Calculations](#calc)
+- [Calculations](#Calculations)
 	- [Figure 2](#fig2)
 	- [Figure 3](#fig3) 	
 	- [Figure 4](#fig4)
-	- [Figure 5](#fig5)
+	- [Figure 5](#Figure-5)
 
 
 # Description of the Study <a name="desc"></a>
@@ -45,13 +45,15 @@ We provide the list of variables that we use for each year [here.](https://githu
 - Accuracy of Business Income: `acc_bus`,
 - Tot. Income Exl Farm and Business HH: `excfarmbus`
 
-The list of variables is a collaboration with Lejvi Dalani, Joao Fonsenca Rodrigues, Xiaohan Zhang, Yan Zhao from the Economics Department at University of Minnesota, and myself.
+The list of variables is a collaboration with Lejvi Dalani, Joao Fonsenca Rodrigues, Xiaohan Zhang and Yan Zhao from the Economics Department at University of Minnesota, and myself.
 
 ## Preparing the Datasets  <a name="prepare"></a>
 
 We analyze the two-year differences in earnings throughtout the period. So, we prepare a distict dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
 
-## Cleaning the Data  <a name="clean"></a>We [restrict](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/cleanData.R) the sample to include only the heads of the households who have the following features:
+## Cleaning the Data  <a name="clean"></a>
+
+We [restrict](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/cleanData.R) the sample to include only the heads of the households who have the following features:
 
 - gender: male
 - age: in [25,59] in both years
@@ -66,8 +68,8 @@ For Figure 2, 3 and 5, and for the first two plots in Figure 4, we [keep](https:
 
 Then, for all calculations, we [drop](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/dropOutliers.R) the top and bottom 1% of the observations:
 
-- wage $\geq$ 1st percentile of wages 
-- wage $\leq$ 99th percentile of wages
+- wage >= 1st percentile of wages 
+- wage <= 99th percentile of wages
  
 # Summary Statistics   <a name="summary"></a>
 
@@ -127,7 +129,7 @@ The [summary statistics](https://github.com/hktosun/ShinSolon2011JPubE/blob/mast
 </table>
 </center>
 
-# Calculations  <a name="calcs"></a>
+# Calculations
 
 ## Figure 2  <a name="fig2"></a>
 For Figure 2, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/getNumbersForFigure2.R) the numbers for five series:
@@ -138,7 +140,9 @@ For Figure 2, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/
 - Wages & Salaries without controlling for age: Take the log of the wage and salary income (`wage`) for both years, take the difference, save the standard deviation of the difference.
 - Total Labor Income excluding farm & business income: Take the log of the Total Labor Income excluding farm & business income (`excfarmbus`) for both years, take the difference, regress on a quadratic in age, save the residuals, save the standard deviation of the residuals.
 
-[Figure 2](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure2.R) is as follows:![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
+[Figure 2](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure2.R) is as follows:
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
 
 ## Figure 3  <a name="fig3"></a>
 
@@ -151,7 +155,8 @@ For Figure 3, we take the log of the wage and salary income (`wage`) for both ye
 - p10: 10th percentile of the residuals 
 
 
-[Figure 3](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure3.R) is as follows:![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
+[Figure 3](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure3.R) is as follows:
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
 
 ## Figure 4  <a name="fig4"></a>
 
@@ -164,10 +169,12 @@ For Figure 4, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/
 
 - Relative change in real earnings (zeros and outliers included): The same calculation described above with the dataset that includes zero earnings.
 
-[Figure 4](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure4.R) is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig4.png)
+[Figure 4](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure4.R) is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig4.png)
 
 
-## Figure 5  <a name="fig5"></a>
+## Figure 5
 
 For Figure 5, we do the same calculations as we did for *Relative change in real earnings (zeros and outliers excluded)* series in Figure 4. Then, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/getNumbersForFigure3.R) the following five properties of that series: 
 
@@ -178,5 +185,7 @@ For Figure 5, we do the same calculations as we did for *Relative change in real
 - p10: 10th percentile
 
 
-[Figure 5](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure5.R) is as follows: ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig5.png)
+[Figure 5](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure5.R){:target="_blank"} is as follows: 
+
+![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig5.png)
 
