@@ -7,7 +7,7 @@ Replication of Shin & Solon (2011, JPubE)
 
 This repository includes the R code that replicates Figure 2-5 of [*"Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?"*](https://www.sciencedirect.com/science/article/pii/S0047272711000338) by Shin & Solon (2011, Journal of Public Economics).
 
-- [Description of the Study](#description-of-the-study)
+<!-- - [Description of the Study](#description-of-the-study)
 - [Data](#data)
 	- [PSID Variables](#vars)
 	- [Preparing the Datasets](#prepare)
@@ -17,7 +17,7 @@ This repository includes the R code that replicates Figure 2-5 of [*"Trends in m
 	- [Figure 2](#fig2)
 	- [Figure 3](#fig3) 	
 	- [Figure 4](#fig4)
-	- [Figure 5](#Figure-5)
+	- [Figure 5](#Figure-5) -->
 
  - [Description of the Study](#description-of-the-study)
 - [Data](#data)
