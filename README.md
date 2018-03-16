@@ -7,28 +7,40 @@ Replication of Shin & Solon (2011, JPubE)
 
 This repository includes the R code that replicates Figure 2-5 of [*"Trends in men's earnings volatility: What does the Panel Study of Income Dynamics show?"*](https://www.sciencedirect.com/science/article/pii/S0047272711000338) by Shin & Solon (2011, Journal of Public Economics).
 
-- [Description of the Study](#desc)
+- [Description of the Study](#description-of-the-study)
 - [Data](#data)
 	- [PSID Variables](#vars)
 	- [Preparing the Datasets](#prepare)
 	- [Cleaning the Data](#clean)
 - [Summary Statistics](#summary)
-- [Calculations](#Calculations)
+- [Calculations](#calculations)
 	- [Figure 2](#fig2)
 	- [Figure 3](#fig3) 	
 	- [Figure 4](#fig4)
 	- [Figure 5](#Figure-5)
 
+ - [Description of the Study](#description-of-the-study)
+- [Data](#data)
+  * [PSID Variables](#psid-variables)
+  * [Preparing the Datasets](#preparing-the-datasets)
+  * [Cleaning the Data](#cleaning-the-data)
+- [Summary Statistics](#summary-statistics)
+- [Calculations](#calculations)
+  * [Figure 2](#figure-2)
+  * [Figure 3](#figure-3)
+  * [Figure 4](#figure-4)
+  * [Figure 5](#figure-5)
 
-# Description of the Study <a name="desc"></a>
+
+# Description of the Study
 
 The paper studies the change in the earnings volatility of men in the U.S. between 1969 and 2006. To this end, they employ the PSID data for the relevant years.  We document the summary statistics of age and wage income distributions, and plot our version of Figure 2 to Figure 5 of the paper.
 
 In Figure 2, we plot these differences. Figure 3 shows the historical movement of the log difference in earnings by plotting 10th, 25th, 50th, 75th and 90th percentile over the entire period. In Figure 4, we compare two methods of calculating volatility of the earnings. Finally, in Figure 5, we plot the 90th percentile-10th percentile difference of the earnings with the latter method in which we use the levels of income rather than the logs.
 
-# Data <a name="data"></a>
+# Data
 
-## PSID Variables   <a name="vars"></a>
+## PSID Variables
 
 We provide the list of variables that we use for each year [here.](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/psid_variables.txt) The variable names here relates to the variable names as follows:
 
@@ -47,11 +59,11 @@ We provide the list of variables that we use for each year [here.](https://githu
 
 The list of variables is a collaboration with Lejvi Dalani, Joao Fonsenca Rodrigues, Xiaohan Zhang and Yan Zhao from the Economics Department at University of Minnesota, and myself.
 
-## Preparing the Datasets  <a name="prepare"></a>
+## Preparing the Datasets
 
 We analyze the two-year differences in earnings throughtout the period. So, we prepare a distict dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
 
-## Cleaning the Data  <a name="clean"></a>
+## Cleaning the Data
 
 We [restrict](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/cleanData.R) the sample to include only the heads of the households who have the following features:
 
@@ -71,7 +83,7 @@ Then, for all calculations, we [drop](https://github.com/hktosun/ShinSolon2011JP
 - wage >= 1st percentile of wages 
 - wage <= 99th percentile of wages
  
-# Summary Statistics   <a name="summary"></a>
+# Summary Statistics
 
 The [summary statistics](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/summaryStatistics.R) of ages and wage & salaries in the dataset is as follows:
 
@@ -131,7 +143,7 @@ The [summary statistics](https://github.com/hktosun/ShinSolon2011JPubE/blob/mast
 
 # Calculations
 
-## Figure 2  <a name="fig2"></a>
+## Figure 2
 For Figure 2, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/getNumbersForFigure2.R) the numbers for five series:
 
 - Wages & Salaries: Take the log of the wage and salary income (`wage`) for both years, take the difference, regress on a quadratic in age, save the residuals, save the standard deviation of the residuals.
@@ -144,7 +156,7 @@ For Figure 2, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/
 
 ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig2.png)
 
-## Figure 3  <a name="fig3"></a>
+## Figure 3
 
 For Figure 3, we take the log of the wage and salary income (`wage`) for both years, take the difference, regress on a quadratic in age, save the residuals. And then, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/getNumbersForFigure3.R) the following values:
 
@@ -158,7 +170,7 @@ For Figure 3, we take the log of the wage and salary income (`wage`) for both ye
 [Figure 3](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure3.R) is as follows:
 ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig3.png)
 
-## Figure 4  <a name="fig4"></a>
+## Figure 4  
 
 For Figure 4, we [calculate](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/getNumbersForFigure4.R) the following three series:
 
