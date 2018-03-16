@@ -197,7 +197,7 @@ For Figure 5, we do the same calculations as we did for *Relative change in real
 - p10: 10th percentile
 
 
-[Figure 5](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure5.R){:target="_blank"} is as follows: 
+[Figure 5](https://github.com/hktosun/ShinSolon2011JPubE/blob/master/func/drawFigure5.R) is as follows: 
 
 ![](https://raw.githubusercontent.com/hktosun/ShinSolon2011JPubE/master/img/fig5.png)
 
