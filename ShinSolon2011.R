@@ -1,5 +1,3 @@
-rm(list = ls(all=TRUE))
-
 library("tidyverse")
 library("e1071")
 library("reshape2")
