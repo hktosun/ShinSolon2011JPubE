@@ -48,7 +48,7 @@ We provide the list of variables that we use for each year [here.](https://githu
 - Age of HH: `age`, 
 - Sex of HH: `gender`,
 - Wage & Sal of HH: `wage`, 
-- Acc Head Wage: `acc_wage`,
+- Accuracy of HH Head Wage: `acc_wage`,
 - Total Labor Income of HH: `inc`,
 - Accuracy of HH Head Labor Income: `acc_inc`,
 - Farm Income of HH: `farm`,
