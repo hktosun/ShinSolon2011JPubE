@@ -61,7 +61,7 @@ The list of variables is a collaboration with Lejvi Dalani, Joao Fonsenca Rodrig
 
 ## Preparing the Datasets
 
-We analyze the two-year differences in earnings throughout the period. So, we prepare a distict dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
+We analyze the two-year differences in earnings throughout the period. So, we prepare a distinct dataset for each pair of years. By doing this, we got 31 datasets: (calendar years) 1969-1971, 1970-1972, 1971-1973, ..., 1994-1996, 1996-1998, ..., 2004-2006. Note that we add 0 to the end of each variable name (except for the 1968 ID) if it's for the initial year, and 1 if it's for the final year. For example, in the data set 1969-1971, we name the initial year's wage as `wage0` and the final year's wage as `wage1`.
 
 ## Cleaning the Data
 
